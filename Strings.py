@@ -18,3 +18,7 @@ print(ord('a'))
 print(ord('b'))
 print(ord('c'))
 print(ord('d'))
+
+# Combine a list of string with empty string
+strings = ['ab', 'cd', 'ef']
+print(' '.join(strings))
