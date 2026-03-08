@@ -13,3 +13,13 @@ print(3 in my_set)
 
 my_set.remove(2)
 print(my_set, 2 in my_set)
+
+# List to set
+print(set([1, 2 ,3]))
+
+# Set Comprehension
+my_set = {i for i in range(6)}
+print(my_set)
+
+
+
