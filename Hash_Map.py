@@ -40,6 +40,35 @@ for value in map.values():
 for key, value in map.items():
     print(key, value)
 
+# Tuples are like arrays but immutable
+tup = (1, 2, 3, 4)
+print(tup)
+print(f'tuple is {tup[0]}')
+print(f'tuple is {tup[1]}')
+print(f'tuple is {tup[2]}')
+print(f'tuple is {tup[3]}')
+
+# But we can't modify tuple because it is immutable
+# tup[0] = 3
+# print(tup) # Output: TypeError: 'tuple' object does not support item assignment
+
+# Tuples can be used for key as Hah map/set
+# hash map
+map = {(1, 2, 3): 'Computer science'}
+print(map[(1, 2, 3)]) # Output: Computer Science
+
+# hash set
+set = set()
+set.add((1, 2, 3))
+print((1, 2, 3) in set) # Output True
+print((1, 2) in set) # Output False
+
+# List can't be key
+# map[[3, 4, 5]] = 6 # Output: TypeError: unhashable type: 'list'
+
+
+
+
 
 
 
