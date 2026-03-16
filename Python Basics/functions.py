@@ -1,37 +1,35 @@
 # Functions in Python
-def match():
-    dict = {1: 'Pakistan', 2: 'New Zealand', 3: 'Australia', 4: 'South Africa'}
-    for key, value in dict.items():
-       print(key, value)
-    n1 = input(f'Enter the team1 name: ')
-    n2 = input(f'Enter the team2 name: ')
 
-    if n1 in dict.values():
-        print(f'{n1} vs {n2}')
-    elif n2 in dict.values():
-        print(f'{n1} vs {n2}')
+def fun():
+    a = input("\nEnter -> 'Hey or Hello': ")
+    name = str(input("Enter your name: "))
+    age = int(input("Enter your age: "))
+
+    if a == 'Hey':
+        print(f'{a}, My name is {name} and my age is {age}.')
+    elif a == 'Hello':
+        print(f'{a}, My name is {name} and my age is {age}.')
     else:
-        print(f'{n1} and {n2} are not in the dictionary')
+        print(f"{a} is not valid")
+
+def ask():
+    print("\nEnter Yes or No")
+    b = input("Would you like to answer the questions?: ")
+    if b == 'Yes' or b == 'yes':
+        answer = input('Are you sure?: ')
+        if answer in ('Yes', 'yes'):
+            print("Ok Great! let's proceed")
+        elif answer in ('No', 'no'):
+            print('Ok see you next time.')
+    elif b == 'No' or b == 'no':
+        print("Ok, we won't ask questions to you.")
     
-def players():
-    try:
-        n = str(input("What's your favorite teams: "))
-        if n == 'Pakistan' or n == 'PAKISTAN':
-            print(f"Ummm {n} are actualy not so good")
-        elif  n == 'New Zealand' or n == 'NEW ZEALAND':
-               print(f"Yeah! {n} are very good team")
-        elif  n == 'Australia' or n == 'australia':
-               print(f'{n} are world champions.')
-        elif  n == 'South Africa' or n == 'south africa':
-               print(f'{n} are world champions.')
-        else:
-             print(f'{n} is not in the dictionary')
-
-    except ValueError:
-        print('Enter valid inputs only.')
-
+def cal():
+    a = int(input("\nWhat's the Number: "))
+    for i in range(1, 11):
+       print(f"{a} * {i} = {a * i}")
 
 if __name__ == '__main__':
-    match()
-    players()
-    
+   fun()
+   ask()
+   cal()
