@@ -52,13 +52,11 @@ def marks():
         try:
            obt_marks = int(input("Enter Obtained marks in Maths: "))
         except TypeError:
-            print(f"{obt_marks} getting a typeError")
-            return
-        
+            return f"{obt_marks} getting a typeError."
+            
         # Condition Statements
         if obt_marks > 100:
             raise ValueError(f"{obt_marks} exceed total marks {total_marks}")
-            
         elif obt_marks >= 80:
             print(f"Grade A")
         elif obt_marks >=70:
@@ -66,7 +64,7 @@ def marks():
         elif obt_marks >= 50:
             print(f"Grade C")
         elif obt_marks < 50:
-            print(f"Alas! you are fail")
+            print(f"Alas! you are fail.")
 
         # Print Obtained marks
         print(f"Obtained marks in Maths {obt_marks}")
@@ -77,12 +75,16 @@ def marks():
 
         # Print total marks of Computer Science 
         print(f"\nTotal Marks in Computer Science {total_marks}")
-        obt_marks = int(input("Enter Obtained marks in Computer Science: "))
-
+        try:
+           obt_marks = int(input("Enter Obtained marks in Computer Science: "))
+        except TypeError as t:
+           return f"{t}"
+           
+        
         # Condition Statements
         if obt_marks > 100:
-           print(f'''{total_marks} are total marks
-                 Therefore, {obt_marks} you enter is invalid''')
+           raise ValueError(f"{total_marks} are total marks "
+            f"Therefore, {obt_marks} you enter is invalid.")
         elif obt_marks >= 80:
          print(f"Grade A")
         elif obt_marks >=70:
@@ -90,7 +92,7 @@ def marks():
         elif obt_marks >= 50:
            print(f"Grade C")
         elif obt_marks < 50:
-           print(f"Alas! you are fail")
+           print(f"Alas! you are fail.")
 
         # Print Obtained marks
         print(f"Obtained marks in Computer Science {obt_marks}")
@@ -101,12 +103,15 @@ def marks():
 
         # Print total marks of English
         print(f"\nTotal Marks in English {total_marks}")
-        obt_marks = int(input("Enter Obtained marks in English: "))
-
+        try:
+           obt_marks = int(input("Enter Obtained marks in English: "))
+        except TypeError as t:
+           return f"{t}"
+    
         # Condition Statements
         if obt_marks > 100:
-           print(f'''{total_marks} are total marks
-                 Therefore {obt_marks} you enter is invalid''')
+           raise ValueError(f"{total_marks} are total marks "
+                 f"Therefore {obt_marks} you enter is invalid.")
         elif obt_marks >= 80:
          print(f"Grade A")
         elif obt_marks >=70:
@@ -114,7 +119,7 @@ def marks():
         elif obt_marks >= 50:
            print(f"Grade C")
         elif obt_marks < 50:
-           print(f"Alas! you are fail")
+           print(f"Alas! you are fail.")
 
         # Print Obtained marks
         print(f"Obtained marks in English {obt_marks}")
@@ -129,7 +134,7 @@ def total(total_cal_1, total_cal_2, total_cal_3, total_marks):
     # Total
     print("\n   --------- Total ---------   ")
     Total_marks = total_cal_1 + total_cal_2 + total_cal_3 
-    print(f"Total marks in three major subjects are {Total_marks}")
+    print(f"Total marks in three major subjects are {Total_marks:.0f}")
     Total = (total_cal_1 + total_cal_2 + total_cal_3) / (total_marks * 3) * 100
     print(f"Total Percentage is {Total:.1f}")
 
