@@ -31,29 +31,37 @@
 
 # Student marks sheet
 def Student_details():
-    print("\n"
+   print("\n"
     "  --------- Marks Sheet ---------  ")
-    print("\n           Student Details")
-    a = input("\nEnter name: ")
-    b = input("Enter roll no: ")
+   print("\n           Student Details")
+
+   # Exception Handling
+   try:
+    a = input("\nEnter name: ").strip()
+    if not a.isalpha():
+      raise ValueError(f"{a} is not a string")
+    b = int(input("Enter roll no: "))
+   except ValueError as t:
+    print(f'{t}')
+   else:
     print(f"\nCandidate name is {a}")
     print(f"Candidate roll no is {b}")
     print('       <-------->      ')
 
 def marks():
-    for _ in range(2):
+    for _ in range(3):
         total_marks = 100
 
         # Title
         title = '\n          Subject wise marks calculation'
         print(title)
+
         # Print total marks of Maths
         print(f"\nTotal Math marks are {total_marks}")
-        try:
-           obt_marks = int(input("Enter Obtained marks in Maths: "))
-        except TypeError:
-            return f"{obt_marks} getting a typeError."
-            
+
+        # User Input
+        obt_marks = int(input("Enter Obtained marks in Maths: "))
+   
         # Condition Statements
         if obt_marks > 100:
             raise ValueError(f"{obt_marks} exceed total marks {total_marks}")
@@ -64,7 +72,7 @@ def marks():
         elif obt_marks >= 50:
             print(f"Grade C")
         elif obt_marks < 50:
-            print(f"Alas! you are fail.")
+            print(f"Feed back: You need to wrok hard.")
 
         # Print Obtained marks
         print(f"Obtained marks in Maths {obt_marks}")
@@ -75,12 +83,10 @@ def marks():
 
         # Print total marks of Computer Science 
         print(f"\nTotal Marks in Computer Science {total_marks}")
-        try:
-           obt_marks = int(input("Enter Obtained marks in Computer Science: "))
-        except TypeError as t:
-           return f"{t}"
+
+        # User Input
+        obt_marks = int(input("Enter Obtained marks in Computer Science: "))
            
-        
         # Condition Statements
         if obt_marks > 100:
            raise ValueError(f"{total_marks} are total marks "
@@ -92,7 +98,7 @@ def marks():
         elif obt_marks >= 50:
            print(f"Grade C")
         elif obt_marks < 50:
-           print(f"Alas! you are fail.")
+           print(f"Feedback: You need to work hard.")
 
         # Print Obtained marks
         print(f"Obtained marks in Computer Science {obt_marks}")
@@ -103,10 +109,9 @@ def marks():
 
         # Print total marks of English
         print(f"\nTotal Marks in English {total_marks}")
-        try:
-           obt_marks = int(input("Enter Obtained marks in English: "))
-        except TypeError as t:
-           return f"{t}"
+
+        # User Input
+        obt_marks = int(input("Enter Obtained marks in English: "))
     
         # Condition Statements
         if obt_marks > 100:
@@ -119,7 +124,7 @@ def marks():
         elif obt_marks >= 50:
            print(f"Grade C")
         elif obt_marks < 50:
-           print(f"Alas! you are fail.")
+           print(f"Feedback: You need to work hard.")
 
         # Print Obtained marks
         print(f"Obtained marks in English {obt_marks}")
@@ -134,10 +139,21 @@ def total(total_cal_1, total_cal_2, total_cal_3, total_marks):
     # Total
     print("\n   --------- Total ---------   ")
     Total_marks = total_cal_1 + total_cal_2 + total_cal_3 
-    print(f"Total marks in three major subjects are {Total_marks:.0f}")
+    print(f"Obtained marks: {Total_marks:.0f}")
+    TOTAL_MARKS = 300
+    print(f"Total marks: {TOTAL_MARKS}")
     Total = (total_cal_1 + total_cal_2 + total_cal_3) / (total_marks * 3) * 100
-    print(f"Total Percentage is {Total:.1f}")
-
+    print(f"Overall percentage is {Total:.1f}")
+    perct = Total
+    if perct >= 90:
+       print(f"Grade A")
+    elif perct >=75:
+       print(f"Grade A")
+    elif perct >=50:
+       print("Grade C")
+    elif perct < 50:
+       print("Fail!")
+    
 
 if __name__ == '__main__':
 #    fun()
