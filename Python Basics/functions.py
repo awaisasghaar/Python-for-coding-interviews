@@ -33,7 +33,11 @@
 def Student_details():
    print("\n"
     "  --------- Marks Sheet ---------  ")
-   print("\n           Student Details")
+   a = "    Student Details"
+   width = len(a) + 9
+   print("\n" + "     " + "*" * width)
+   print(f"     |   {a}    |") 
+   print("     " + "*" * width)
 
    # Exception Handling
    try:
@@ -53,24 +57,30 @@ def marks():
         total_marks = 100
 
         # Title
-        title = '\n          Subject wise marks calculation'
-        print(title)
+        title = '       Subject wise marks calculation'
+        width = len(title) + 6
+        print("\n" "     " + "*" * width)
+        print(f"     |{title}    |")
+        print("     " + "*" * width)
 
         # Print total marks of Maths
-        print(f"\nTotal Math marks are {total_marks}")
+        print(f"\nTotal Maths marks are {total_marks}")
 
         # User Input
-        obt_marks = int(input("Enter Obtained marks in Maths: "))
+        obt_marks = int(input(f"Enter Obtained marks in Maths: "))
    
         # Condition Statements
         if obt_marks > 100:
             raise ValueError(f"{obt_marks} exceed total marks {total_marks}")
+        elif obt_marks < 0:
+           raise ValueError(f"{obt_marks} is a negative integer "
+                            f"It should be positive")
         elif obt_marks >= 80:
-            print(f"Grade A")
+            print(f"(Grade A)")
         elif obt_marks >=70:
-            print(f"Grade B")
+            print(f"(Grade B)")
         elif obt_marks >= 50:
-            print(f"Grade C")
+            print(f"(Grade C)")
         elif obt_marks < 50:
             print(f"Feed back: You need to wrok hard.")
 
@@ -78,7 +88,7 @@ def marks():
         print(f"Obtained marks in Maths {obt_marks}")
         # Marks percantage calculation
         total_cal_1 = obt_marks / total_marks * 100
-        print(f"Percentage of Math is {total_cal_1:.1f}")
+        print(f"Percentage of Maths is {total_cal_1:.1f}")
         print('       <-------->      ')
 
         # Print total marks of Computer Science 
@@ -91,12 +101,14 @@ def marks():
         if obt_marks > 100:
            raise ValueError(f"{total_marks} are total marks "
             f"Therefore, {obt_marks} you enter is invalid.")
+        elif obt_marks < 0:
+           raise ValueError(f"{obt_marks} should be a positive integer")  
         elif obt_marks >= 80:
-         print(f"Grade A")
+         print(f"(Grade A)")
         elif obt_marks >=70:
-           print(f"Grade B")
+           print(f"(Grade B)")
         elif obt_marks >= 50:
-           print(f"Grade C")
+           print(f"(Grade C)")
         elif obt_marks < 50:
            print(f"Feedback: You need to work hard.")
 
@@ -117,12 +129,15 @@ def marks():
         if obt_marks > 100:
            raise ValueError(f"{total_marks} are total marks "
                  f"Therefore {obt_marks} you enter is invalid.")
+        elif obt_marks < 0:
+           raise ValueError(f"The marks you put {obt_marks} should be a "
+                            f"positive integer")
         elif obt_marks >= 80:
-         print(f"Grade A")
+         print(f"(Grade A)")
         elif obt_marks >=70:
-           print(f"Grade B")
+           print(f"(Grade B)")
         elif obt_marks >= 50:
-           print(f"Grade C")
+           print(f"(Grade C)")
         elif obt_marks < 50:
            print(f"Feedback: You need to work hard.")
 
@@ -137,24 +152,32 @@ def marks():
 
 def total(total_cal_1, total_cal_2, total_cal_3, total_marks):
     # Total
-    print("\n   --------- Total ---------   ")
+    Total = 'Result'
+    width = len(Total) + 6
+    print("\n" + "        " + "*" * width)
+    print(f"        |  {Total}  |")
+    print("        " + "*" * width)
+
+
     Total_marks = total_cal_1 + total_cal_2 + total_cal_3 
-    print(f"Obtained marks: {Total_marks:.0f}")
+    print(f"\nObtained marks: {Total_marks:.0f}")
     TOTAL_MARKS = 300
     print(f"Total marks: {TOTAL_MARKS}")
     Total = (total_cal_1 + total_cal_2 + total_cal_3) / (total_marks * 3) * 100
     print(f"Overall percentage is {Total:.1f}")
+
+   #  Variable
     perct = Total
+   #  Condition assigned
     if perct >= 90:
-       print(f"Grade A")
+       print(f"Overall (Grade A)")
     elif perct >=75:
-       print(f"Grade A")
+       print(f"Overall (Grade A)")
     elif perct >=50:
-       print("Grade C")
+       print("Overall (Grade C)")
     elif perct < 50:
        print("Fail!")
     
-
 if __name__ == '__main__':
 #    fun()
 #    ask()
