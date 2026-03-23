@@ -65,7 +65,13 @@ def main():
        per = a / 100 * 100
        print(f"Percentage is {per:.1f} %")
        
-       if a >= 85:
+       if a > 100:
+           raise ValueError(f"The value {a} is greater than {num} "
+                            f"So therefore, it is invalid")
+       elif a < 0:
+           raise ValueError(f"The value {a} is negative number "
+                            f"So therefore, it is invalid")
+       elif a >= 85:
            print('Grade A')
        elif a >= 75:
            print("Grade B+")
@@ -75,6 +81,7 @@ def main():
            print("Grade C")
        elif a < 50:
            print("Fail")
+       
        print('\n        <--------->   \n')
        print(subjects)
        
@@ -107,5 +114,11 @@ def call(subjects):
 
 if __name__ == '__main__':
     Student_details()
-    subjects = main()
-    call(subjects)
+    try:
+       subjects = main()
+    except ValueError as e:
+        print(f"{e}")
+    try:
+        call(subjects)
+    except NameError as e:
+        print(f"{e}")
