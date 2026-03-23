@@ -52,144 +52,60 @@ def Student_details():
     print(f"Candidate roll no is {b}")
     print('       <-------->      ')
 
-def marks():
-    for _ in range(3):
-        total_marks = 100
+def main():
+   subjects = {'Maths': None, 'Computer Science': None, 'English': None}
+   num = 100
+   for subject in subjects.keys():
+       a = int(input(f'\nEnter Marks in {subject}: '))
+       print(f"The marks in {subject} are {a}")
+       print(f"Total marks in {subject} are {num}")
+       subjects[subject] = a
 
-        # Title
-        title = '       Subject wise marks calculation'
-        width = len(title) + 6
-        print("\n" "     " + "*" * width)
-        print(f"     |{title}    |")
-        print("     " + "*" * width)
-
-        # Print total marks of Maths
-        print(f"\nTotal Maths marks are {total_marks}")
-
-        # User Input
-        obt_marks = int(input(f"Enter Obtained marks in Maths: "))
+      # Calculating the percentage 
+       per = a / 100 * 100
+       print(f"Percentage is {per:.1f} %")
+       
+       if a >= 85:
+           print('Grade A')
+       elif a >= 75:
+           print("Grade B+")
+       elif a >= 65:
+           print('Grade B')
+       elif a > 50:
+           print("Grade C")
+       elif a < 50:
+           print("Fail")
+       print('\n        <--------->   \n')
+       print(subjects)
+       
+   return subjects
    
-        # Condition Statements
-        if obt_marks > 100:
-            raise ValueError(f"{obt_marks} exceed total marks {total_marks}")
-        elif obt_marks < 0:
-           raise ValueError(f"{obt_marks} is a negative integer "
-                            f"It should be positive")
-        elif obt_marks >= 80:
-            print(f"(Grade A)")
-        elif obt_marks >=70:
-            print(f"(Grade B)")
-        elif obt_marks >= 50:
-            print(f"(Grade C)")
-        elif obt_marks < 50:
-            print(f"Feed back: You need to wrok hard.")
+total = 300  
+a = 'Result'
+width = len(a) + 9
+def call(subjects):  
+    print("\n" + "     " + "*" * width)
+    print(f"     |   {a}    |") 
+    print("     " + "*" * width)
+    total_marks = sum(subjects.values())
+    perc = total_marks / total * 100
+    print(f"\nObtained marks are {total_marks}")
+    print(f"Total marks are {total}")
+    print(f"Overall percentage is {perc:.1f}")
+   
+    if perc >= 85:
+           print('Grade A')
+    elif perc >= 75:
+           print("Grade B+")
+    elif perc >= 65:
+           print('Grade B')
+    elif perc > 50:
+           print("Grade C")
+    elif perc < 50:
+           print("Fail")
+  
 
-        # Print Obtained marks
-        print(f"Obtained marks in Maths {obt_marks}")
-        # Marks percantage calculation
-        total_cal_1 = obt_marks / total_marks * 100
-        print(f"Percentage of Maths is {total_cal_1:.1f}")
-        print('       <-------->      ')
-
-        # Print total marks of Computer Science 
-        print(f"\nTotal Marks in Computer Science {total_marks}")
-
-        # User Input
-        obt_marks = int(input("Enter Obtained marks in Computer Science: "))
-           
-        # Condition Statements
-        if obt_marks > 100:
-           raise ValueError(f"{total_marks} are total marks "
-            f"Therefore, {obt_marks} you enter is invalid.")
-        elif obt_marks < 0:
-           raise ValueError(f"{obt_marks} should be a positive integer")  
-        elif obt_marks >= 80:
-         print(f"(Grade A)")
-        elif obt_marks >=70:
-           print(f"(Grade B)")
-        elif obt_marks >= 50:
-           print(f"(Grade C)")
-        elif obt_marks < 50:
-           print(f"Feedback: You need to work hard.")
-
-        # Print Obtained marks
-        print(f"Obtained marks in Computer Science {obt_marks}")
-        # Marks percentage calculation
-        total_cal_2 = obt_marks / total_marks * 100
-        print(f"Percentage of Computer Science is {total_cal_2:.1f}")
-        print('       <-------->      ')
-
-        # Print total marks of English
-        print(f"\nTotal Marks in English {total_marks}")
-
-        # User Input
-        obt_marks = int(input("Enter Obtained marks in English: "))
-    
-        # Condition Statements
-        if obt_marks > 100:
-           raise ValueError(f"{total_marks} are total marks "
-                 f"Therefore {obt_marks} you enter is invalid.")
-        elif obt_marks < 0:
-           raise ValueError(f"The marks you put {obt_marks} should be a "
-                            f"positive integer")
-        elif obt_marks >= 80:
-         print(f"(Grade A)")
-        elif obt_marks >=70:
-           print(f"(Grade B)")
-        elif obt_marks >= 50:
-           print(f"(Grade C)")
-        elif obt_marks < 50:
-           print(f"Feedback: You need to work hard.")
-
-        # Print Obtained marks
-        print(f"Obtained marks in English {obt_marks}")
-        # Marks percentage calculation
-        total_cal_3 = obt_marks / total_marks * 100
-        print(f"Percentage of English is {total_cal_3:.1f}")
-        print('       <-------->      ')
-
-        return total_cal_1, total_cal_2, total_cal_3, total_marks
-
-def total(total_cal_1, total_cal_2, total_cal_3, total_marks):
-    # Total
-    Total = 'Result'
-    width = len(Total) + 6
-    print("\n" + "        " + "*" * width)
-    print(f"        |  {Total}  |")
-    print("        " + "*" * width)
-
-
-    Total_marks = total_cal_1 + total_cal_2 + total_cal_3 
-    print(f"\nObtained marks: {Total_marks:.0f}")
-    TOTAL_MARKS = 300
-    print(f"Total marks: {TOTAL_MARKS}")
-    Total = (total_cal_1 + total_cal_2 + total_cal_3) / (total_marks * 3) * 100
-    print(f"Overall percentage is {Total:.1f}")
-
-   #  Variable
-    perct = Total
-   #  Condition assigned
-    if perct >= 90:
-       print(f"Overall (Grade A)")
-    elif perct >=75:
-       print(f"Overall (Grade A)")
-    elif perct >=50:
-       print("Overall (Grade C)")
-    elif perct < 50:
-       print("Fail!")
-    
 if __name__ == '__main__':
-#    fun()
-#    ask()
-#    cal()
-
-   Student_details()
-   try:
-    total_cal_1, total_cal_2, total_cal_3, total_marks = marks()
-   except ValueError as e:
-      print(f'{e}')
-
-   try:
-    total(total_cal_1, total_cal_2, total_cal_3, total_marks)
-   except NameError as n:
-      print(f'{n}')
+    Student_details()
+    subjects = main()
+    call(subjects)
