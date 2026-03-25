@@ -67,7 +67,7 @@ def percentage(total):
 if __name__ == '__main__':
     subjects = sheet()
     total = total_subject_marks(subjects)
-    result = percentage(total)
-    print(f"Result: {result}")
+    perc = percentage(total)
+    print(f"Result: {perc}")
      
 
