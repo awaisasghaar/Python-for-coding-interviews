@@ -34,10 +34,16 @@ def sheet():
     subjects = {'Maths': None, 'Computer Science': None, 'English': None}
     print('\n')
     for subject in subjects.keys():
-        a = int(input(f"Enter marks in {subject}: "))
-        subjects[subject] = a
+        while True:
+           a = input(f"Enter marks in {subject}: ")
+           if a.isdigit():
+              subjects[subject] = int(a)
+              break
+           else:
+               print("Please enter a valid input")
     return subjects
-    
+
+#  Calculating the sum of subjects values   
 def total_subject_marks(subjects):
     total = sum(subjects.values())
     print('\n')
@@ -46,7 +52,7 @@ def total_subject_marks(subjects):
     print(f"\nTotal marks are {total}/300")
     return total
     
-
+# Calulaing the percentage
 def percentage(total):
     perc = total / 300 * 100
     print(f"Total Percentage is {perc:.2f}")
@@ -65,9 +71,12 @@ def percentage(total):
 
 
 if __name__ == '__main__':
-    subjects = sheet()
+    try:
+       subjects = sheet()
+    except TypeError as e:
+        print(f"{e}")
     total = total_subject_marks(subjects)
-    perc = percentage(total)
-    print(f"Result: {perc}")
+    result = percentage(total)
+    print(f"Result: {result}")
      
 

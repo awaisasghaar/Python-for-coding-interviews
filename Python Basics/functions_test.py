@@ -7,6 +7,14 @@ def test_integer_sheet():
     assert sheet, subjects['Computer Science'] == 52
     assert sheet, subjects['English'] == 65
 
+def test_string_sheet():
+    subjects = {'Maths': 'HE', 'Computer Science': 52, 'English': 65}
+    assert sheet, subjects['Maths'] == 'Please enter valid input'
+
+def test_string_sheet_1():
+    subjects = {'Maths': 'jwe', 'Computer Science': 52, 'English': 65}
+    assert sheet, subjects['Maths'] == 'Please enter valid input'
+
 def test_percentage():
     assert percentage(230) == 'Grade B+ (Pass)'
     assert percentage(143) == 'Fail'
